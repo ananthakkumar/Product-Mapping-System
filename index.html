@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Product Matching System</h1>
+<form action="/match" method="post">
+    <label for="product_name">Enter Product Name:</label>
+    <input type="text" name="product_name" required>
+    <button type="submit">Match</button>
+</form>
+{% endblock %}
