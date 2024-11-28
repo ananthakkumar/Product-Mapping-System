@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Matching Result</h2>
+{% if manual %}
+    <p>No match found for "{{ input_name }}".</p>
+    <form action="/add_mapping" method="post">
+        <input type="hidden" name="supplier_name" value="{{ input_name }}">
+        <label for="standardized_name">Standardized Name:</label>
+        <input type="text" name="standardized_name" required>
+        <button type="submit">Add Mapping</button>
+    </form>
+{% else %}
+    <p>Match found: "{{ match }}" with confidence {{ confidence }}%.</p>
+{% endif %}
+<a href="/">Go back</a>
+{% endblock %}
